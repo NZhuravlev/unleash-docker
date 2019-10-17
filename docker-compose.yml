@@ -6,6 +6,12 @@ services:
       - "4242:4242"
     environment:
       DATABASE_URL: postgres://postgres:unleash@db/postgres
+      AUTH_HOST: ${AUTH_HOST}
+      AUTH_REALM: ${AUTH_REALM}
+      AUTH_CLIENT_ID: ${AUTH_CLIENT_ID}
+      CONTEXT_PATH: ${CONTEXT_PATH}
+      CLIENT_SECRET: ${CLIENT_SECRET}
+      SECRET: ${UNLEASH_SECRET}
     depends_on:
       - db
     command: > 

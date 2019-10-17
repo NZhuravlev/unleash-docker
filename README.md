@@ -1,3 +1,13 @@
+## Run setup
+
+Create `.env` file and fill in all the env vars:
+
+`cp .env.example .env`
+
+Then run the app:
+
+`sh run.sh` 
+
 ## Use this image
 
 We have published this image on docker-hub. 

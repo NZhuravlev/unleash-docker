@@ -1,8 +1,13 @@
 'use strict';
 
-const fs = require("fs");
 const unleash = require('unleash-server');
+const enableKeycloak = require('./keycloak-auth-hook');
 
-let options = {};
+const options = {
+    adminAuthentication: 'custom',
+    preRouterHook: enableKeycloak,
+};
 
-unleash.start(options);
+unleash
+    .start(options)
+    .then(it => console.info(`Unleash has been started on http://localhost:${it.app.get('port')}`));
